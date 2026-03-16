@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WiseToDo</title>
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -23,15 +25,11 @@
       max-width: 480px;
     }
     .app-icon {
-      width: 96px;
-      height: 96px;
-      background: linear-gradient(145deg, #1c1c1e, #3a3a3c);
-      border-radius: 22px;
-      margin: 0 auto 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
+      width: 120px;
+      height: 120px;
+      border-radius: 27px;
+      margin: 0 auto 20px;
+      display: block;
       box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     }
     h1 {
@@ -89,7 +87,7 @@
 <body>
 
   <div class="hero">
-    <div class="app-icon">✓</div>
+    <img class="app-icon" src="icon.png" alt="WiseToDo App Icon">
     <h1>WiseToDo</h1>
     <p class="tagline">说出来就对了<em> / Say it. Done.</em></p>
     <div class="links">
