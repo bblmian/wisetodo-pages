@@ -27,10 +27,12 @@
     .app-icon {
       width: 120px;
       height: 120px;
-      border-radius: 27px;
       margin: 0 auto 20px;
       display: block;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      /* 新图自带圆角、透明边与柔和投影（Icon Composer 的玻璃质感）。
+         原来这里还挂着 border-radius: 27px 和 box-shadow —— 对透明 PNG 来说
+         那是在图案自己的圆角外再切一刀、在它自己的投影上再压一层，
+         正是「双重投影」那种反模式。两条都去掉，让图案自己说话。 */
     }
     h1 {
       font-size: 2.4rem;
