@@ -25,6 +25,10 @@
     .footer a { color: #555; text-decoration: none; }
     .footer a:hover { text-decoration: underline; }
     a { color: #0066cc; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0 16px; font-size: 0.95rem; }
+    th, td { border: 1px solid #e5e5e5; padding: 8px 10px; text-align: left; vertical-align: top; color: #333; }
+    th { background: #fafafa; font-weight: 600; }
+    .tablewrap { overflow-x: auto; }
   </style>
 </head>
 <body>
@@ -32,107 +36,116 @@
 
   <!-- 中文部分 -->
   <h1>WiseToDo 隐私政策</h1>
-  <p class="subtitle">最后更新：2026年3月16日</p>
+  <p class="subtitle">最后更新：2026年8月7日</p>
 
-  <p>感谢您使用 WiseToDo。本隐私政策说明我们如何收集、使用和保护您在使用本应用时的信息。请在使用本应用前仔细阅读本政策。</p>
+  <p>WiseToDo（以下简称「本应用」）由独立开发者运营。本应用<strong>没有账号系统</strong>，不要求注册或登录，也<strong>没有自建服务器保存你的内容</strong>。</p>
 
-  <h2>1. 我们收集的信息</h2>
-  <p>WiseToDo 在您使用语音输入功能时会录制您的语音，并将语音数据发送至 OpenAI Whisper API 进行语音转文字处理。除此之外，您创建的待办事项、任务数据以及偏好设置均存储在您的本地设备上，不会上传至我们的服务器。</p>
-  <ul>
-    <li><strong>语音数据：</strong>仅在您主动触发录音时收集，处理完毕后不予保留。</li>
-    <li><strong>任务数据：</strong>完全存储于本地设备，我们无法访问。</li>
-    <li><strong>日历数据：</strong>仅在您授予日历权限后访问，用于创建和同步日程事件，不会传输至第三方。</li>
-  </ul>
+  <h2>一、你的内容存在哪里</h2>
+  <p>你创建的任务、笔记、日志、对话、项目等全部内容，存放在你的 iPhone 本地，并通过 Apple 的 iCloud（CloudKit 私有数据库）在你自己的设备之间同步。</p>
+  <p>这份数据在<strong>你自己的 iCloud 账户</strong>里，开发者无法读取。卸载本应用并删除 iCloud 中的数据后，这些内容将不再保留。</p>
 
-  <h2>2. 信息的使用方式</h2>
-  <p>我们收集的信息仅用于以下目的：</p>
-  <ul>
-    <li>将语音转换为文字，以便创建和管理您的待办事项。</li>
-    <li>通过 AI 对任务进行智能解析、分类和时间估算。</li>
-    <li>（如您授权）将任务同步至您的系统日历。</li>
-  </ul>
+  <h2>二、哪些内容会被发送出去，发给谁</h2>
+  <p>为了实现语音识别与 AI 功能，以下内容会被发送至<strong>字节跳动（火山引擎）</strong>的服务：</p>
+  <div class="tablewrap">
+  <table>
+    <tr><th>发送内容</th><th>用途</th></tr>
+    <tr><td>录音音频流</td><td>实时语音识别、语音对话</td></tr>
+    <tr><td>语音转写后的文本</td><td>理解你的意图、生成任务与日志</td></tr>
+    <tr><td>你的提问</td><td>联网搜索问答</td></tr>
+    <tr><td>笔记与日志正文</td><td>AI 改写（你主动点击时）、向量化以支持语义检索</td></tr>
+  </table>
+  </div>
+  <p>这些数据用于<strong>即时处理并返回结果</strong>。字节跳动对这些数据的处理适用其自身的隐私政策，建议你一并查阅。</p>
+  <p><strong>语义检索的向量索引只保存在你的设备上，从不离开设备</strong>；离开设备的是上表中被向量化的那段文本。</p>
 
-  <h2>3. 第三方服务</h2>
-  <p>WiseToDo 使用以下第三方服务：</p>
-  <ul>
-    <li><strong>OpenAI API：</strong>用于语音转文字（Whisper）和任务智能解析（GPT）。您的语音和任务文本会按照 <a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI 隐私政策</a> 进行处理。</li>
-  </ul>
-  <p>我们不会向任何其他第三方出售、共享或披露您的个人信息。</p>
+  <h2>三、我们不收集什么</h2>
+  <p>本应用不收集：个人身份信息、位置、广告标识符（IDFA）、通讯录、浏览记录。</p>
+  <p>本应用<strong>不含任何统计、埋点或广告组件</strong>，不进行跨 App 追踪。</p>
 
-  <h2>4. 数据安全</h2>
-  <p>您的任务数据存储在本地设备，受设备系统安全机制保护。语音数据通过加密连接传输至 OpenAI，处理后即丢弃，不在我们的服务器上保留。</p>
+  <h2>四、权限</h2>
+  <div class="tablewrap">
+  <table>
+    <tr><th>权限</th><th>用途</th></tr>
+    <tr><td>麦克风</td><td>语音输入与实时语音对话</td></tr>
+    <tr><td>语音识别</td><td>把你说的话实时转成文字</td></tr>
+    <tr><td>日历</td><td>把你的日程写进系统「日历」</td></tr>
+    <tr><td>提醒事项</td><td>把你要做的事推送到系统「提醒事项」，由系统按时提醒你</td></tr>
+    <tr><td>相机</td><td>拍照作为对话附件</td></tr>
+    <tr><td>相册</td><td>读：选择照片作为对话附件；写：把导出的日记图片保存到你的相册</td></tr>
+  </table>
+  </div>
+  <p>每一项都只在你主动使用对应功能时触发，可随时在系统「设置」中撤销。</p>
+  <p><strong>关于提醒：本应用自己不发送通知。</strong>需要按时提醒的事项，由本应用写入系统「提醒事项」，再由 iOS 在你设定的时间提醒你。因此本应用不会请求通知权限。</p>
 
-  <h2>5. 儿童隐私</h2>
-  <p>WiseToDo 不面向 13 岁以下的儿童，我们不会有意收集未成年人的个人信息。</p>
+  <h2>五、订阅</h2>
+  <p>本应用提供自动续订订阅。购买、续订与退款全部由 Apple 处理，开发者不接触你的支付信息，只能得知你当前处于哪一档订阅。</p>
 
-  <h2>6. 权限说明</h2>
-  <p>本应用可能请求以下系统权限：</p>
-  <ul>
-    <li><strong>麦克风：</strong>用于语音输入功能，仅在您主动录音时激活。</li>
-    <li><strong>日历：</strong>用于将任务写入系统日历，仅在您授权后启用。</li>
-  </ul>
+  <h2>六、儿童</h2>
+  <p>本应用不面向 13 岁以下儿童，也不会有意收集其信息。</p>
 
-  <h2>7. 政策变更</h2>
-  <p>我们可能会不时更新本隐私政策。重大变更将通过应用内通知告知您。继续使用本应用即表示您同意更新后的政策。</p>
-
-  <h2>8. 联系我们</h2>
-  <p>如对本隐私政策有任何疑问，请联系：<br>
-  <a href="mailto:benjaminfaxpaper01@gmail.com">benjaminfaxpaper01@gmail.com</a></p>
+  <h2>七、变更与联系</h2>
+  <p>本政策如有变更将更新本页面与「最后更新」日期。</p>
+  <p>问题请联系：<a href="mailto:benjaminfaxpaper01@gmail.com">benjaminfaxpaper01@gmail.com</a></p>
 
   <hr>
 
   <!-- English Section -->
   <h1>WiseToDo Privacy Policy</h1>
-  <p class="subtitle">Last Updated: March 16, 2026</p>
+  <p class="subtitle">Last updated: August 7, 2026</p>
 
-  <p>Thank you for using WiseToDo. This Privacy Policy explains how we collect, use, and protect your information when you use our app. Please read this policy carefully before using the app.</p>
+  <p>WiseToDo is operated by an independent developer. The app has <strong>no account system</strong> — no sign-up, no login — and <strong>no server of ours stores your content</strong>.</p>
 
-  <h2>1. Information We Collect</h2>
-  <p>WiseToDo records your voice when you use the voice input feature and sends the audio to the OpenAI Whisper API for speech-to-text processing. Beyond that, your to-do items, task data, and preferences are stored locally on your device and are never uploaded to our servers.</p>
-  <ul>
-    <li><strong>Voice data:</strong> Collected only when you actively trigger recording; not retained after processing.</li>
-    <li><strong>Task data:</strong> Stored entirely on your local device; we have no access to it.</li>
-    <li><strong>Calendar data:</strong> Accessed only if you grant calendar permission, used to create and sync events; never transmitted to third parties.</li>
-  </ul>
+  <h2>1. Where your content lives</h2>
+  <p>Tasks, notes, journals, conversations and projects are stored locally on your iPhone and synced across your own devices through Apple iCloud (CloudKit private database).</p>
+  <p>That data lives in <strong>your own iCloud account</strong>; the developer cannot read it. After you delete the app and remove its data from iCloud, none of it is retained.</p>
 
-  <h2>2. How We Use Information</h2>
-  <p>Information we collect is used solely to:</p>
-  <ul>
-    <li>Convert voice to text so you can create and manage your to-dos.</li>
-    <li>Intelligently parse, categorize, and estimate time for tasks using AI.</li>
-    <li>Sync tasks to your system calendar (only if you have granted permission).</li>
-  </ul>
+  <h2>2. What leaves your device, and to whom</h2>
+  <p>To provide speech recognition and AI features, the following is sent to <strong>ByteDance (Volcano Engine)</strong> services:</p>
+  <div class="tablewrap">
+  <table>
+    <tr><th>Sent</th><th>Purpose</th></tr>
+    <tr><td>Recorded audio stream</td><td>Real-time speech recognition and voice conversation</td></tr>
+    <tr><td>Transcribed text</td><td>Understanding intent, generating tasks and journals</td></tr>
+    <tr><td>Your questions</td><td>Web-search question answering</td></tr>
+    <tr><td>Note and journal text</td><td>AI rewriting (only when you tap it), and embedding for semantic search</td></tr>
+  </table>
+  </div>
+  <p>This data is used to process your request and return a result. ByteDance's own privacy policy governs its handling; please review it as well.</p>
+  <p><strong>The vector index used for semantic search never leaves your device</strong>; what leaves is the text being embedded, as listed above.</p>
 
-  <h2>3. Third-Party Services</h2>
-  <p>WiseToDo uses the following third-party service:</p>
-  <ul>
-    <li><strong>OpenAI API:</strong> Used for speech-to-text (Whisper) and intelligent task parsing (GPT). Your voice and task text are processed in accordance with <a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI's Privacy Policy</a>.</li>
-  </ul>
-  <p>We do not sell, share, or disclose your personal information to any other third parties.</p>
+  <h2>3. What we do not collect</h2>
+  <p>No personal identifiers, no location, no advertising identifier (IDFA), no contacts, no browsing history.</p>
+  <p>The app contains <strong>no analytics, telemetry or advertising components</strong> and does not track you across apps or websites.</p>
 
-  <h2>4. Data Security</h2>
-  <p>Your task data is stored on your local device, protected by the device's built-in security mechanisms. Voice data is transmitted to OpenAI over an encrypted connection and is discarded after processing — it is not retained on our servers.</p>
+  <h2>4. Permissions</h2>
+  <div class="tablewrap">
+  <table>
+    <tr><th>Permission</th><th>Purpose</th></tr>
+    <tr><td>Microphone</td><td>Voice input and real-time voice conversation</td></tr>
+    <tr><td>Speech Recognition</td><td>Transcribing what you say into text</td></tr>
+    <tr><td>Calendar</td><td>Writing your events into the system Calendar app</td></tr>
+    <tr><td>Reminders</td><td>Pushing your to-dos into the system Reminders app, so iOS can alert you on time</td></tr>
+    <tr><td>Camera</td><td>Taking a photo to attach to a conversation</td></tr>
+    <tr><td>Photos</td><td>Read: choosing a photo to attach. Write: saving an exported journal image to your library</td></tr>
+  </table>
+  </div>
+  <p>Each is triggered only when you use the corresponding feature and can be revoked at any time in Settings.</p>
+  <p><strong>About reminders: this app does not send notifications of its own.</strong> Anything that needs to alert you on time is written into the system Reminders app, and iOS delivers the alert. The app therefore does not request notification permission.</p>
 
-  <h2>5. Children's Privacy</h2>
-  <p>WiseToDo is not directed at children under the age of 13. We do not knowingly collect personal information from minors.</p>
+  <h2>5. Subscriptions</h2>
+  <p>The app offers auto-renewable subscriptions. Purchase, renewal and refunds are handled entirely by Apple; the developer never sees your payment information and only learns which tier you are currently on.</p>
 
-  <h2>6. Permissions</h2>
-  <p>The app may request the following system permissions:</p>
-  <ul>
-    <li><strong>Microphone:</strong> Required for voice input; activated only when you initiate a recording.</li>
-    <li><strong>Calendar:</strong> Used to write tasks to your system calendar; enabled only upon your authorization.</li>
-  </ul>
+  <h2>6. Children</h2>
+  <p>The app is not directed to children under 13 and does not knowingly collect their data.</p>
 
-  <h2>7. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. Significant changes will be communicated via an in-app notice. Continued use of the app constitutes your acceptance of the updated policy.</p>
-
-  <h2>8. Contact Us</h2>
-  <p>If you have any questions about this Privacy Policy, please contact us at:<br>
-  <a href="mailto:benjaminfaxpaper01@gmail.com">benjaminfaxpaper01@gmail.com</a></p>
+  <h2>7. Changes and contact</h2>
+  <p>Changes will be reflected on this page and in the "Last updated" date.</p>
+  <p>Questions: <a href="mailto:benjaminfaxpaper01@gmail.com">benjaminfaxpaper01@gmail.com</a></p>
 
   <div class="footer">
-    <p>最后更新 / Last Updated: 2026年3月16日 / March 16, 2026</p>
+    <p>最后更新 / Last Updated: 2026年8月7日 / August 7, 2026</p>
     <p>联系我们 / Contact: <a href="mailto:benjaminfaxpaper01@gmail.com">benjaminfaxpaper01@gmail.com</a></p>
+    <p>使用条款 / Terms of Use: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Apple Standard EULA</a></p>
   </div>
 
 </div>
