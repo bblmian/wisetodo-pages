@@ -16,10 +16,11 @@
     .container { max-width: 720px; margin: 0 auto; }
     h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
     h2 { font-size: 1.2rem; font-weight: 600; margin-top: 32px; margin-bottom: 8px; color: #111; }
+    h3 { font-size: 1.02rem; font-weight: 600; margin-top: 20px; margin-bottom: 6px; color: #111; }
     p { margin-bottom: 12px; color: #333; }
     ul { margin: 8px 0 12px 20px; color: #333; }
     ul li { margin-bottom: 6px; }
-    .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 32px; }
+    .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 24px; }
     hr { border: none; border-top: 1px solid #e5e5e5; margin: 48px 0; }
     .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e5e5e5; color: #888; font-size: 0.85rem; }
     .footer a { color: #555; text-decoration: none; }
@@ -29,123 +30,234 @@
     th, td { border: 1px solid #e5e5e5; padding: 8px 10px; text-align: left; vertical-align: top; color: #333; }
     th { background: #fafafa; font-weight: 600; }
     .tablewrap { overflow-x: auto; }
+    .summary {
+      background: #f7f9fb; border: 1px solid #e2e8ef; border-radius: 10px;
+      padding: 16px 18px; margin: 20px 0 8px;
+    }
+    .summary p:last-child { margin-bottom: 0; }
+    .summary strong { color: #111; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #111; color: #e8e8e8; }
+      h1, h2, h3 { color: #f2f2f2; }
+      p, ul, th, td { color: #d0d0d0; }
+      th { background: #1c1c1c; }
+      th, td { border-color: #2e2e2e; }
+      hr, .footer { border-color: #2e2e2e; }
+      .summary { background: #17191c; border-color: #2b2f34; }
+      .summary strong { color: #f2f2f2; }
+      a { color: #4da3ff; }
+    }
   </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- 中文部分 -->
+  <!-- ══════════════════ 中文部分 ══════════════════ -->
   <h1>WiseToDo 隐私政策</h1>
-  <p class="subtitle">最后更新：2026年8月7日</p>
+  <p class="subtitle">最后更新：2026年8月31日</p>
 
-  <p>WiseToDo（以下简称「本应用」）由独立开发者运营。本应用<strong>没有账号系统</strong>，不要求注册或登录，也<strong>没有自建服务器保存你的内容</strong>。</p>
+  <div class="summary">
+    <p><strong>三句话看完：</strong></p>
+    <p>1. 你的任务、笔记、日记存在<strong>你自己的 iPhone 和 iCloud</strong> 里，开发者读不到。</p>
+    <p>2. 要用 AI 功能，你的语音和相关文字会发送给<strong>字节跳动（火山引擎）</strong>处理，处理服务器在<strong>中国大陆</strong>。</p>
+    <p>3. 第一次打开会<strong>明确问你同不同意</strong>；不同意也能用，而且随时可以在设置里改。</p>
+  </div>
+
+  <p>WiseToDo（以下简称「本应用」）由独立开发者运营。本应用<strong>没有账号系统</strong>，不要求注册或登录，也<strong>没有我们自建的服务器保存你的内容</strong>。</p>
 
   <h2>一、你的内容存在哪里</h2>
   <p>你创建的任务、笔记、日志、对话、项目等全部内容，存放在你的 iPhone 本地，并通过 Apple 的 iCloud（CloudKit 私有数据库）在你自己的设备之间同步。</p>
-  <p>这份数据在<strong>你自己的 iCloud 账户</strong>里，开发者无法读取。卸载本应用并删除 iCloud 中的数据后，这些内容将不再保留。</p>
+  <p>这份数据在<strong>你自己的 iCloud 账户</strong>里，开发者无法读取。删除方法见第七节。</p>
 
-  <h2>二、哪些内容会被发送出去，发给谁</h2>
-  <p>为了实现语音识别与 AI 功能，以下内容会被发送至<strong>字节跳动（火山引擎）</strong>的服务：</p>
+  <h2>二、哪些内容会离开你的设备，发给谁</h2>
+  <p>为了实现语音识别与 AI 功能，以下内容会发送至<strong>字节跳动（火山引擎）</strong>的服务。<strong>只有在你同意 AI 数据处理之后才会发送</strong>（见第六节）。</p>
   <div class="tablewrap">
   <table>
-    <tr><th>发送内容</th><th>用途</th></tr>
-    <tr><td>录音音频流</td><td>实时语音识别、语音对话</td></tr>
-    <tr><td>语音转写后的文本</td><td>理解你的意图、生成任务与日志</td></tr>
-    <tr><td>你的提问</td><td>联网搜索问答</td></tr>
-    <tr><td>笔记与日志正文</td><td>AI 改写（你主动点击时）、向量化以支持语义检索</td></tr>
+    <tr><th>会离开设备的内容</th><th>什么时候</th><th>用来做什么</th></tr>
+    <tr><td>录音音频流</td><td>你按住说话，或进入语音对话时</td><td>实时语音识别、语音对话</td></tr>
+    <tr><td>语音转写后的文本</td><td>同上</td><td>理解你的意图，生成任务与日志</td></tr>
+    <tr><td>你输入或说出的提问</td><td>你发送时</td><td>回答问题、联网搜索问答</td></tr>
+    <tr><td>你为对话添加的照片</td><td>你主动拍照或选图并发送时</td><td>看懂图片内容并回答。<strong>发送时会一并附上你当前的任务清单与最近 12 轮对话</strong>，让助手知道你在说哪件事</td></tr>
+    <tr><td>你的笔记与日记正文</td><td>你主动点「AI 改写」时；以及为支持语义检索而做向量化时</td><td>改写文本；生成用于检索的向量</td></tr>
+    <tr><td>你在设置里填写的称呼（昵称）</td><td>进行语音对话时</td><td>让助手用这个名字称呼你</td></tr>
   </table>
   </div>
-  <p>这些数据用于<strong>即时处理并返回结果</strong>。字节跳动对这些数据的处理适用其自身的隐私政策，建议你一并查阅。</p>
   <p><strong>语义检索的向量索引只保存在你的设备上，从不离开设备</strong>；离开设备的是上表中被向量化的那段文本。</p>
 
-  <h2>三、我们不收集什么</h2>
-  <p>本应用不收集：个人身份信息、位置、广告标识符（IDFA）、通讯录、浏览记录。</p>
-  <p>本应用<strong>不含任何统计、埋点或广告组件</strong>，不进行跨 App 追踪。</p>
+  <h3>服务器在哪里（跨境传输）</h3>
+  <p>上述处理由字节跳动运营的火山引擎服务完成，<strong>处理节点位于中国大陆</strong>。这意味着：如果你不在中国大陆，上述内容会<strong>离开你所在的国家或地区</strong>，并在中国大陆境内被处理。如果你不接受这一点，请在第六节所述的位置关闭 AI 数据处理——关闭后本应用不会向其发送任何内容。</p>
+
+  <h3>对方会保留多久</h3>
+  <ul>
+    <li><strong>一次语音对话进行中</strong>：字节跳动的服务端会保留该次对话最近 20 轮问答，用于让助手记得上文。</li>
+    <li><strong>每次开始新的语音对话都会重新建立上下文</strong>，上一次对话的内容不会被带入下一次。</li>
+    <li>文字问答、图片理解、改写、向量化均为<strong>即时处理并返回结果</strong>。</li>
+    <li>我们自己不保存这些内容——我们没有用于保存它们的服务器。</li>
+  </ul>
+
+  <h3>我们对第三方的要求</h3>
+  <p>字节跳动（火山引擎）作为我们的受托处理方，<strong>须对上述数据提供与本政策所述同等或更高的保护</strong>，且仅为「处理你的请求并返回结果」这一目的处理这些数据，不得用于本政策所述目的之外的用途。其隐私与合规说明见 <a href="https://www.volcengine.com/trust/privacy" target="_blank" rel="noopener">火山引擎官网</a>。</p>
+
+  <h2>三、本应用不收集什么</h2>
+  <ul>
+    <li>不收集位置信息、广告标识符（IDFA）、通讯录、浏览记录、健康数据。</li>
+    <li>不要求也不收集邮箱、手机号——本应用没有账号系统。</li>
+    <li><strong>不含任何统计、埋点或广告组件</strong>，不进行跨 App 或跨网站追踪，因此本应用不会出现「允许 App 跟踪你的活动吗」这类弹窗。</li>
+  </ul>
+  <p class="subtitle">说明：第二节列出的「昵称」「照片」等内容之所以在 App Store 的隐私标签中被标为「收集」，是因为 Apple 把「数据离开设备、且开发者或第三方可访问」定义为收集——即使我们自己并不保存它。本节与第二节合起来，就是这份标签的完整解释。</p>
 
   <h2>四、权限</h2>
   <div class="tablewrap">
   <table>
-    <tr><th>权限</th><th>用途</th></tr>
-    <tr><td>麦克风</td><td>语音输入与实时语音对话</td></tr>
-    <tr><td>语音识别</td><td>把你说的话实时转成文字</td></tr>
-    <tr><td>日历</td><td>把你的日程写进系统「日历」</td></tr>
-    <tr><td>提醒事项</td><td>把你要做的事推送到系统「提醒事项」，由系统按时提醒你</td></tr>
-    <tr><td>相机</td><td>拍照作为对话附件</td></tr>
-    <tr><td>相册</td><td>读：选择照片作为对话附件；写：把导出的日记图片保存到你的相册</td></tr>
+    <tr><th>权限</th><th>用途</th><th>何时才会问你</th></tr>
+    <tr><td>麦克风</td><td>语音输入与实时语音对话</td><td>首次打开</td></tr>
+    <tr><td>语音识别</td><td>把你说的话实时转成文字</td><td>首次打开</td></tr>
+    <tr><td>日历</td><td>把你的日程写进系统「日历」</td><td>你第一次创建日程时</td></tr>
+    <tr><td>提醒事项</td><td>把你要做的事推送到系统「提醒事项」，由系统按时提醒你</td><td>你第一次用到提醒时</td></tr>
+    <tr><td>相机</td><td>拍照作为对话附件</td><td>你第一次点拍照时</td></tr>
+    <tr><td>相册</td><td>读：选择照片作为对话附件；写：把导出的日记图片保存到你的相册</td><td>你第一次选图或保存图片时</td></tr>
   </table>
   </div>
-  <p>每一项都只在你主动使用对应功能时触发，可随时在系统「设置」中撤销。</p>
+  <p>每一项都只在你主动使用对应功能时触发，可随时在系统「设置」中撤销。<strong>拒绝任何一项都不会导致本应用无法使用</strong>，只是对应功能不可用。</p>
   <p><strong>关于提醒：本应用自己不发送通知。</strong>需要按时提醒的事项，由本应用写入系统「提醒事项」，再由 iOS 在你设定的时间提醒你。因此本应用不会请求通知权限。</p>
 
   <h2>五、订阅</h2>
-  <p>本应用提供自动续订订阅。购买、续订与退款全部由 Apple 处理，开发者不接触你的支付信息，只能得知你当前处于哪一档订阅。</p>
+  <p>本应用提供自动续订订阅（Pro：每月 500 次 AI 对话额度；Max：每月 1500 次）。购买、续订与退款<strong>全部由 Apple 处理</strong>，开发者不接触你的支付信息，只能得知你当前处于哪一档订阅。</p>
+  <p>使用条款采用 Apple 标准最终用户许可协议：<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Terms of Use (EULA)</a>。取消与退款的操作步骤见<a href="support.html">支持页面</a>。</p>
 
-  <h2>六、儿童</h2>
-  <p>本应用不面向 13 岁以下儿童，也不会有意收集其信息。</p>
+  <h2>六、你的选择：同意、拒绝、随时撤回</h2>
+  <p>第一次打开本应用时，会有一屏明确告诉你第二节的事，并让你选择<strong>同意</strong>或<strong>先不同意</strong>。</p>
+  <ul>
+    <li><strong>不同意时仍然可以用</strong>：手打记事、日程、笔记、日记、时间统计、推送到系统「提醒事项」。</li>
+    <li><strong>不同意时用不了</strong>：说话记事、语音对话、AI 整理日志、联网问答。</li>
+    <li><strong>随时可以改</strong>：应用内「设置 → 关于 → AI 数据处理」这个开关，两个方向都能切。关闭后，本应用<strong>不再向字节跳动发送任何内容</strong>。</li>
+  </ul>
 
-  <h2>七、变更与联系</h2>
-  <p>本政策如有变更将更新本页面与「最后更新」日期。</p>
+  <h2>七、保留与删除</h2>
+  <h3>删除你在本应用里的内容</h3>
+  <ul>
+    <li><strong>删单条</strong>：在应用内直接删除对应的任务、笔记、日记或对话。</li>
+    <li><strong>全部删除</strong>：删除本应用，然后在 iPhone 的「设置 → 点最上方你的姓名 → iCloud → 管理账户存储空间 → WiseToDo → 删除数据」中删除 iCloud 里的副本。两步都做完之后，这些内容不再保留，<strong>且无法恢复</strong>。</li>
+  </ul>
+  <h3>已经发送给字节跳动的部分</h3>
+  <p>见第二节「对方会保留多久」：语音对话的上下文只在该次对话内保留最近 20 轮，下一次对话不再使用；其余均为即时处理。关闭 AI 数据处理后不会再有新的发送。</p>
+  <h3>提出请求</h3>
+  <p>如果你希望我们协助处理与你的数据有关的请求（包括撤回同意、删除请求或查询），请发邮件至 <a href="mailto:benjaminfaxpaper01@gmail.com">benjaminfaxpaper01@gmail.com</a>，我们会在 7 天内回复。</p>
+
+  <h2>八、儿童</h2>
+  <p>本应用不面向 13 岁以下儿童，也不会有意收集其信息。如果你认为有儿童向我们提供了信息，请通过上述邮箱联系我们。</p>
+
+  <h2>九、变更与联系</h2>
+  <p>本政策如有变更，将更新本页面与顶部的「最后更新」日期。</p>
   <p>问题请联系：<a href="mailto:benjaminfaxpaper01@gmail.com">benjaminfaxpaper01@gmail.com</a></p>
 
   <hr>
 
-  <!-- English Section -->
+  <!-- ══════════════════ English ══════════════════ -->
   <h1>WiseToDo Privacy Policy</h1>
-  <p class="subtitle">Last updated: August 7, 2026</p>
+  <p class="subtitle">Last updated: August 31, 2026</p>
+
+  <div class="summary">
+    <p><strong>The short version:</strong></p>
+    <p>1. Your tasks, notes and journals live in <strong>your own iPhone and iCloud</strong>. The developer cannot read them.</p>
+    <p>2. To use the AI features, your voice and related text are sent to <strong>ByteDance (Volcano Engine)</strong> for processing, on servers located in <strong>mainland China</strong>.</p>
+    <p>3. The app <strong>asks for your explicit permission on first launch</strong>. You can decline and still use the app, and you can change your mind at any time in Settings.</p>
+  </div>
 
   <p>WiseToDo is operated by an independent developer. The app has <strong>no account system</strong> — no sign-up, no login — and <strong>no server of ours stores your content</strong>.</p>
 
   <h2>1. Where your content lives</h2>
   <p>Tasks, notes, journals, conversations and projects are stored locally on your iPhone and synced across your own devices through Apple iCloud (CloudKit private database).</p>
-  <p>That data lives in <strong>your own iCloud account</strong>; the developer cannot read it. After you delete the app and remove its data from iCloud, none of it is retained.</p>
+  <p>That data lives in <strong>your own iCloud account</strong>; the developer cannot read it. See section 7 for how to delete it.</p>
 
   <h2>2. What leaves your device, and to whom</h2>
-  <p>To provide speech recognition and AI features, the following is sent to <strong>ByteDance (Volcano Engine)</strong> services:</p>
+  <p>To provide speech recognition and AI features, the following is sent to <strong>ByteDance (Volcano Engine)</strong>. Nothing is sent <strong>unless you have consented to AI data processing</strong> (see section 6).</p>
   <div class="tablewrap">
   <table>
-    <tr><th>Sent</th><th>Purpose</th></tr>
-    <tr><td>Recorded audio stream</td><td>Real-time speech recognition and voice conversation</td></tr>
-    <tr><td>Transcribed text</td><td>Understanding intent, generating tasks and journals</td></tr>
-    <tr><td>Your questions</td><td>Web-search question answering</td></tr>
-    <tr><td>Note and journal text</td><td>AI rewriting (only when you tap it), and embedding for semantic search</td></tr>
+    <tr><th>What leaves your device</th><th>When</th><th>What it is used for</th></tr>
+    <tr><td>Recorded audio stream</td><td>While you hold to speak, or during a voice conversation</td><td>Real-time speech recognition and voice conversation</td></tr>
+    <tr><td>Transcribed text</td><td>Same as above</td><td>Understanding your intent, generating tasks and journal entries</td></tr>
+    <tr><td>Questions you type or speak</td><td>When you send them</td><td>Answering, and web-search question answering</td></tr>
+    <tr><td>Photos you attach to a conversation</td><td>When you take or pick a photo and send it</td><td>Understanding the image and answering. <strong>Your current task list and the last 12 conversation turns are sent along with it</strong>, so the assistant knows what you are referring to</td></tr>
+    <tr><td>Your note and journal text</td><td>When you tap "AI rewrite"; and when text is embedded for semantic search</td><td>Rewriting the text; producing embeddings for search</td></tr>
+    <tr><td>The display name you set</td><td>During voice conversations</td><td>So the assistant can address you by that name</td></tr>
   </table>
   </div>
-  <p>This data is used to process your request and return a result. ByteDance's own privacy policy governs its handling; please review it as well.</p>
   <p><strong>The vector index used for semantic search never leaves your device</strong>; what leaves is the text being embedded, as listed above.</p>
 
-  <h2>3. What we do not collect</h2>
-  <p>No personal identifiers, no location, no advertising identifier (IDFA), no contacts, no browsing history.</p>
-  <p>The app contains <strong>no analytics, telemetry or advertising components</strong> and does not track you across apps or websites.</p>
+  <h3>Where the servers are (cross-border transfer)</h3>
+  <p>This processing is performed by Volcano Engine, operated by ByteDance, <strong>on nodes located in mainland China</strong>. This means that if you are outside mainland China, the content listed above <strong>leaves your country or region</strong> and is processed in mainland China. If you are not comfortable with this, turn off AI data processing at the location described in section 6 — once off, the app sends nothing to them.</p>
+
+  <h3>How long they keep it</h3>
+  <ul>
+    <li><strong>During a single voice conversation</strong>: ByteDance's servers retain the most recent 20 question-and-answer turns of that conversation so the assistant can follow the thread.</li>
+    <li><strong>Every new voice conversation starts a fresh context</strong>; content from a previous conversation is not carried into the next one.</li>
+    <li>Text answering, image understanding, rewriting and embedding are <strong>processed on the fly and the result is returned</strong>.</li>
+    <li>We do not retain any of it ourselves — we have no server on which to retain it.</li>
+  </ul>
+
+  <h3>What we require of the third party</h3>
+  <p>ByteDance (Volcano Engine) acts as our processor and <strong>is required to provide the same or equal protection of your data as stated in this policy</strong>, and to process it solely for the purpose of handling your request and returning a result — not for any purpose beyond those described here. Their privacy and compliance statement is available at <a href="https://www.volcengine.com/trust/privacy" target="_blank" rel="noopener">volcengine.com</a>.</p>
+
+  <h2>3. What the app does not collect</h2>
+  <ul>
+    <li>No location, no advertising identifier (IDFA), no contacts, no browsing history, no health data.</li>
+    <li>No email address or phone number is requested or collected — the app has no account system.</li>
+    <li><strong>No analytics, telemetry or advertising components</strong>, and no tracking across apps or websites. You will therefore never see an "Allow the app to track your activity?" prompt.</li>
+  </ul>
+  <p class="subtitle">Note: items such as your display name and attached photos appear as "collected" on the App Store privacy label because Apple defines collection as data leaving the device where the developer or a third party can access it — even when we retain none of it ourselves. Sections 2 and 3 together are the full explanation of that label.</p>
 
   <h2>4. Permissions</h2>
   <div class="tablewrap">
   <table>
-    <tr><th>Permission</th><th>Purpose</th></tr>
-    <tr><td>Microphone</td><td>Voice input and real-time voice conversation</td></tr>
-    <tr><td>Speech Recognition</td><td>Transcribing what you say into text</td></tr>
-    <tr><td>Calendar</td><td>Writing your events into the system Calendar app</td></tr>
-    <tr><td>Reminders</td><td>Pushing your to-dos into the system Reminders app, so iOS can alert you on time</td></tr>
-    <tr><td>Camera</td><td>Taking a photo to attach to a conversation</td></tr>
-    <tr><td>Photos</td><td>Read: choosing a photo to attach. Write: saving an exported journal image to your library</td></tr>
+    <tr><th>Permission</th><th>Purpose</th><th>When you are asked</th></tr>
+    <tr><td>Microphone</td><td>Voice input and real-time voice conversation</td><td>First launch</td></tr>
+    <tr><td>Speech Recognition</td><td>Transcribing what you say into text</td><td>First launch</td></tr>
+    <tr><td>Calendar</td><td>Writing your events into the system Calendar app</td><td>The first time you create an event</td></tr>
+    <tr><td>Reminders</td><td>Pushing your to-dos into the system Reminders app, so iOS can alert you on time</td><td>The first time a reminder is needed</td></tr>
+    <tr><td>Camera</td><td>Taking a photo to attach to a conversation</td><td>The first time you tap the camera</td></tr>
+    <tr><td>Photos</td><td>Read: choosing a photo to attach. Write: saving an exported journal image to your library</td><td>The first time you pick or save an image</td></tr>
   </table>
   </div>
-  <p>Each is triggered only when you use the corresponding feature and can be revoked at any time in Settings.</p>
+  <p>Each is triggered only when you use the corresponding feature and can be revoked at any time in Settings. <strong>Declining any of them never blocks the app</strong> — only that feature becomes unavailable.</p>
   <p><strong>About reminders: this app does not send notifications of its own.</strong> Anything that needs to alert you on time is written into the system Reminders app, and iOS delivers the alert. The app therefore does not request notification permission.</p>
 
   <h2>5. Subscriptions</h2>
-  <p>The app offers auto-renewable subscriptions. Purchase, renewal and refunds are handled entirely by Apple; the developer never sees your payment information and only learns which tier you are currently on.</p>
+  <p>The app offers auto-renewable subscriptions (Pro: 500 AI conversation turns per month; Max: 1500). Purchase, renewal and refunds are <strong>handled entirely by Apple</strong>; the developer never sees your payment information and only learns which tier you are currently on.</p>
+  <p>Terms of Use are Apple's standard End User License Agreement: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Terms of Use (EULA)</a>. Steps for cancelling and requesting a refund are on the <a href="support.html">support page</a>.</p>
 
-  <h2>6. Children</h2>
-  <p>The app is not directed to children under 13 and does not knowingly collect their data.</p>
+  <h2>6. Your choice: consent, decline, withdraw at any time</h2>
+  <p>On first launch the app shows a screen stating plainly what section 2 describes, and asks you to <strong>agree</strong> or <strong>decline for now</strong>.</p>
+  <ul>
+    <li><strong>If you decline, the app still works</strong>: typing tasks, scheduling, notes, journals, time statistics, and pushing items to the system Reminders app.</li>
+    <li><strong>What is unavailable if you decline</strong>: speaking to capture, voice conversation, AI-organised journals, and web-search answering.</li>
+    <li><strong>You can change your mind at any time</strong>: the switch at <em>Settings → About → AI Data Processing</em> works in both directions. Once off, the app <strong>sends nothing to ByteDance</strong>.</li>
+  </ul>
 
-  <h2>7. Changes and contact</h2>
-  <p>Changes will be reflected on this page and in the "Last updated" date.</p>
+  <h2>7. Retention and deletion</h2>
+  <h3>Deleting your content in the app</h3>
+  <ul>
+    <li><strong>A single item</strong>: delete the task, note, journal entry or conversation in the app.</li>
+    <li><strong>Everything</strong>: delete the app, then remove its iCloud copy at <em>Settings → your name at the top → iCloud → Manage Account Storage → WiseToDo → Delete Data</em>. After both steps nothing is retained, and <strong>it cannot be recovered</strong>.</li>
+  </ul>
+  <h3>What was already sent to ByteDance</h3>
+  <p>See "How long they keep it" in section 2: a voice conversation's context is retained only within that conversation (most recent 20 turns) and is not used by the next one; everything else is processed on the fly. Once you turn off AI data processing, nothing further is sent.</p>
+  <h3>Making a request</h3>
+  <p>To ask us to help with anything concerning your data — withdrawing consent, a deletion request, or a question — email <a href="mailto:benjaminfaxpaper01@gmail.com">benjaminfaxpaper01@gmail.com</a>. We reply within 7 days.</p>
+
+  <h2>8. Children</h2>
+  <p>The app is not directed to children under 13 and does not knowingly collect their data. If you believe a child has provided us with information, please contact us at the address above.</p>
+
+  <h2>9. Changes and contact</h2>
+  <p>If this policy changes, this page and the "Last updated" date at the top will be updated.</p>
   <p>Questions: <a href="mailto:benjaminfaxpaper01@gmail.com">benjaminfaxpaper01@gmail.com</a></p>
 
   <div class="footer">
-    <p>最后更新 / Last Updated: 2026年8月7日 / August 7, 2026</p>
-    <p>联系我们 / Contact: <a href="mailto:benjaminfaxpaper01@gmail.com">benjaminfaxpaper01@gmail.com</a></p>
-    <p>使用条款 / Terms of Use: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Apple Standard EULA</a></p>
+    <a href="index.html">← 返回首页 / Back to Home</a> &nbsp;·&nbsp;
+    <a href="support.html">支持 / Support</a> &nbsp;·&nbsp;
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">使用条款 / Terms of Use</a>
+    <br><br>
+    © 2026 WiseToDo
   </div>
 
 </div>
